@@ -1,0 +1,242 @@
+@import url("https://fonts.googleapis.com/css2?family=BIZ+UDPGothic&family=M+PLUS+1p&display=swap");
+
+:root {
+  --biz: "BIZ UDPGothic";
+  --mplus: "M PLUS 1p";
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--biz), sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  font-size: 1.4rem;
+  margin-top: 20px;
+  line-height: 2.5rem;
+  font-weight: 300;
+  letter-spacing: 0.05rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+section {
+  padding-top: 4rem;
+  min-height: 100vh;
+}
+
+.span-color span {
+  color: #6ec423;
+}
+
+.span-color-white span {
+  color: #fff;
+}
+
+/* Header */
+#header {
+  background-image: url(../assets/header.jpg);
+  background-size: cover;
+  background-position: top center;
+  position: relative;
+}
+
+#header .container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#header .header {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 50px;
+  justify-content: flex-start;
+}
+#header h1 {
+  display: block;
+  width: fit-content;
+  font-size: 3rem;
+  position: relative;
+  color: transparent;
+  animation: text_reveal 0.5s ease forwards;
+  animation-delay: 1s;
+}
+#header h1:nth-child(1) {
+  animation-delay: 1s;
+}
+#header h1:nth-child(2) {
+  animation-delay: 2s;
+}
+#header h1 span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: #005888;
+  animation: text_reveal_box 1s ease;
+  animation-delay: 0.5s;
+}
+#header h1:nth-child(1) span {
+  animation-delay: 0.5s;
+}
+#header h1:nth-child(2) span {
+  animation-delay: 1.5s;
+}
+/* x Header x */
+
+/* About */
+#about {
+  background: url(../assets/wave-1.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+#about .reveal {
+  position: relative;
+  opacity: 0;
+}
+
+#about .reveal.active {
+  opacity: 1;
+}
+
+#about .active.fade-left {
+  animation: fade-left 1s ease-in;
+}
+
+#about .active.fade-right {
+  animation: fade-right 1s ease-in;
+}
+/* x About */
+
+/* Roles */
+#roles {
+  background: url(../assets/wave-2.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+#roles .card-img-top {
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+}
+/* x Roles x */
+
+/* Disco */
+#disco {
+  background: url(../assets/layered-waves-haikei.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  min-height: calc(100vh - 50px);
+}
+
+#disco .card {
+  position: relative;
+  overflow: hidden;
+}
+
+#disco .card:before {
+  position: absolute;
+  content: "";
+  width: 80%;
+  height: 220%;
+  background: #afbc94;
+  opacity: 0.8;
+  top: -50%;
+  left: -100%;
+  z-index: 1;
+  transform: rotate(25deg);
+  transform-origin: center top 0;
+  transition: 0.4s;
+}
+
+#disco .card:hover:before {
+  left: 10%;
+}
+
+#disco .card-text {
+  padding: 0 20px;
+  position: absolute;
+  top: -100%;
+  z-index: 2;
+  transition: 0.5s;
+}
+
+#disco .card:hover .card-text {
+  top: 20px;
+}
+
+#disco .link-light:hover {
+  color: #111;
+}
+/* x Disco x */
+
+/* footer */
+footer {
+  background-color: #f1ddbf;
+  height: 50px;
+}
+
+footer i:hover{
+    color: whitesmoke;
+}
+/* x ffoter x */
+
+/* Keyframe */
+@keyframes text_reveal_box {
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+
+@keyframes text_reveal {
+  100% {
+    color: white;
+    text-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@keyframes fade-left {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-right {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+/* x Keyframe x */
